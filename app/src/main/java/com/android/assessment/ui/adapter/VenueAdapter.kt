@@ -11,18 +11,18 @@ import kotlinx.android.synthetic.main.home_rv_item_view.view.*
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     private var data: List<Venue>? = null
-    private lateinit var mListener : onItemClickListener
+    private lateinit var mListener: onItemClickListener
 
     fun setData(list: List<Venue>) {
         data = list
         notifyDataSetChanged()
     }
 
-    interface onItemClickListener{
+    interface onItemClickListener {
         fun onItemClick(position: Int)
     }
-    fun setOnItemClickListener(listener: onItemClickListener)
-    {
+
+    fun setOnItemClickListener(listener: onItemClickListener) {
         mListener = listener
     }
 
@@ -46,16 +46,18 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
         holder.bindView(item)
     }
 
-    class HomeViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
+    class HomeViewHolder(itemView: View, listener: onItemClickListener) :
+        RecyclerView.ViewHolder(itemView) {
         fun bindView(item: Venue?) {
             itemView.tv_home_item_title.text = item?.name
-            itemView.tv_home_item_body.text = item?.adress
+            itemView.tv_home_item_body.text = item?.location?.address
 
         }
-        init{
-         itemView.setOnClickListener {
-             listener.onItemClick(adapterPosition)
-         }
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
         }
     }
 

@@ -25,7 +25,6 @@ class DetailVenueRepository {
 
             _data.value = null
         }
-
     }
 
 }

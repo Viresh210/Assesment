@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface DetailVenueEndpoint{
+interface DetailVenueEndpoint {
 
     @GET("v2/venues/{VENUEID}")
     suspend fun get(

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,9 +8,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_margin="20dp"
-        >
+        android:orientation="vertical">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/photoLayout"
             android:layout_width="match_parent"
@@ -45,12 +44,11 @@
                 android:textSize="23sp"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="23sp"
-                app:autoSizeTextType="uniform"
                 app:autoSizeMinTextSize="15sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/venue_description"
@@ -60,13 +58,12 @@
                 android:layout_marginEnd="4dp"
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
-                app:autoSizeTextType="uniform"
                 app:autoSizeMaxTextSize="14sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/venue_title"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/venue_title" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -88,17 +85,16 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
                 android:lines="1"
+                android:text="@string/venue_contact"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="Contactinformatie"
                 app:autoSizeMaxTextSize="18sp"
-                app:autoSizeTextType="uniform"
                 app:autoSizeMinTextSize="15sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/venue_phoneNumber"
@@ -108,19 +104,18 @@
                 android:layout_marginEnd="4dp"
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
-                app:autoSizeTextType="uniform"
                 app:autoSizeMaxTextSize="14sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/venue_title_contact"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/venue_title_contact" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/venueAdresLayout"
+            android:id="@+id/venueAddressLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -130,44 +125,86 @@
             app:layout_constraintTop_toBottomOf="@+id/venueContactLayout">
 
             <TextView
-                android:id="@+id/venue_title_adress"
+                android:id="@+id/venue_title_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
                 android:lines="1"
+                android:text="@string/venue_address"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="Adress"
                 app:autoSizeMaxTextSize="18sp"
-                app:autoSizeTextType="uniform"
                 app:autoSizeMinTextSize="15sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/venue_adress"
+                android:id="@+id/venue_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
                 android:textColor="@android:color/black"
                 android:textSize="12sp"
-                app:autoSizeTextType="uniform"
                 app:autoSizeMaxTextSize="14sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/venue_title_adress"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/venue_title_address" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/venueRatingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/venueContactLayout">
 
+            <TextView
+                android:id="@+id/venue_title_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:lines="1"
+                android:text="@string/venue_address"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="18sp"
+                app:autoSizeMinTextSize="15sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/venue_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/venue_title_rating" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
