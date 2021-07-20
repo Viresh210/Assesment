@@ -1,5 +1,7 @@
 package com.android.assessment.repositories
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.android.assessment.models.VenuesMainResponse
@@ -23,7 +25,7 @@ class VenuesRepository() {
             )
             _data.value = response
         } catch (e: Exception) {
-
+            Log.d(TAG, e.message.toString())
             _data.value = null
         }
     }

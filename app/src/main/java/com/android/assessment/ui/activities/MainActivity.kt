@@ -10,6 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -33,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<EditText>(R.id.main_search)
 
         viewModel.getData(
-            city = Constants.city,
-            date = Constants.date
+            city = Constants.CITY,
+            date = Constants.DATE
         )
 
         viewModel.data
@@ -44,8 +45,8 @@ class MainActivity : AppCompatActivity() {
                     initAdapter()
                     rv_home.visibility = View.VISIBLE
                     if (it != null) {
-                        adapter.setData(it.response.venues)
-                        searchData = it.response.venues
+                        adapter.setData(it.response.venues.sortedBy { myObject -> myObject.name })
+                        searchData = it.response.venues.sortedBy { myObject -> myObject.name }
                     }
                 }
             })

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/blue">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
                 android:lines="1"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="23sp"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="23sp"
@@ -56,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12sp"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeTextType="uniform"
@@ -86,7 +87,7 @@
                 android:layout_marginEnd="4dp"
                 android:lines="1"
                 android:text="@string/venue_contact"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="18sp"
@@ -102,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12sp"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeTextType="uniform"
@@ -132,7 +133,7 @@
                 android:layout_marginEnd="4dp"
                 android:lines="1"
                 android:text="@string/venue_address"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="18sp"
@@ -148,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12sp"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeTextType="uniform"
@@ -168,7 +169,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/venueContactLayout">
+            app:layout_constraintTop_toBottomOf="@+id/venueAddressLayout">
 
             <TextView
                 android:id="@+id/venue_title_rating"
@@ -177,8 +178,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
                 android:lines="1"
-                android:text="@string/venue_address"
-                android:textColor="@android:color/black"
+                android:text="@string/venue_rating"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="18sp"
@@ -194,7 +195,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12sp"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeTextType="uniform"

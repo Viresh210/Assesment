@@ -11,8 +11,8 @@ interface DetailVenueEndpoint {
     @GET("v2/venues/{VENUEID}")
     suspend fun get(
         @Path("VENUEID") venueID: String,
-        @Query("client_id") id: String = Constants.clientId,
-        @Query("client_secret") secret: String = Constants.clientSecret,
+        @Query("client_id") id: String = Constants.CLIENT_ID,
+        @Query("client_secret") secret: String = Constants.CLIENT_SECRET,
         @Query("v") date: String
     ): DetailVenueMainResponse
 

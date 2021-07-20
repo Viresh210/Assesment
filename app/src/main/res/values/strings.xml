@@ -2,5 +2,6 @@
     <string name="app_name">Assessment</string>
     <string name="venue_address">Address</string>
     <string name="venue_contact">Contactinformation</string>
+    <string name="venue_rating">Rating</string>
     <string name="search">Search</string>
 </resources>
