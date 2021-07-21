@@ -5,10 +5,10 @@ import com.android.assessment.models.Location
 import com.android.assessment.models.Venue
 
 object TestData {
-    var testVenuedata: List<Venue>? = null
+    var testVenueData: List<Venue>? = null
 
     init {
-        testVenuedata = arrayListOf(
+        testVenueData = arrayListOf(
             Venue(
                 id = "4b4f6bbbf964a520e10527e3", name = "Albert Heijn",
                 location = Location(

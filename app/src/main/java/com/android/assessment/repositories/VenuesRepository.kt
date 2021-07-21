@@ -8,7 +8,7 @@ import com.android.assessment.models.VenuesMainResponse
 import com.android.assessment.network.ApiClient
 import com.android.assessment.network.endpoints.VenuesEndpoint
 
-class VenuesRepository() {
+class VenuesRepository {
 
     private val _data: MutableLiveData<VenuesMainResponse?> = MutableLiveData(null)
     val data: LiveData<VenuesMainResponse?> get() = _data

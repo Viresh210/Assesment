@@ -9,7 +9,7 @@
     <string name="no_contact_information">No contactinformation available</string>
     <string name="no_address">No address availables</string>
     <string name="no_rating">No rating available</string>
-    <string name="error_message_api">The App could not retrieve the information requested</string>
+    <string name="error_message_api">The App could not retrieve all the information requested</string>
     <string name="image_description">Rotterdam</string>
 
 </resources>

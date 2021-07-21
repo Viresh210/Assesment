@@ -2,12 +2,11 @@ package com.android.assessment.ui.activities
 
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.android.assessment.ui.viewmodels.DetailVenueViewModel
 import com.android.assessment.R
+import com.android.assessment.ui.viewmodels.DetailVenueViewModel
 import com.android.assessment.util.Constants
 
 class DetailActivity : AppCompatActivity() {
@@ -46,18 +45,7 @@ class DetailActivity : AppCompatActivity() {
                         tvVenueRating.text =
                             it.response.venue.rating ?: getString(R.string.no_rating)
 
-                    } else {
-                        Toast.makeText(
-                            this,
-                            getString(R.string.error_message_api),
-                            Toast.LENGTH_LONG
-                        ).show()
-                        tvVenueDescription.text = getString(R.string.no_description)
-                        tvVenuePhoneNumber.text = getString(R.string.no_contact_information)
-                        tvVenueAddress.text = getString(R.string.no_address)
-                        tvVenueRating.text = getString(R.string.no_rating)
                     }
-
                 })
         }
     }

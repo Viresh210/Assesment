@@ -1,12 +1,12 @@
 package com.android.assessment.repositories
 
-import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.android.assessment.models.DetailVenueMainResponse
-import com.android.assessment.network.endpoints.DetailVenueEndpoint
 import com.android.assessment.network.ApiClient
+import com.android.assessment.network.endpoints.DetailVenueEndpoint
 
 class DetailVenueRepository {
 
@@ -24,7 +24,7 @@ class DetailVenueRepository {
             )
             _data.value = response
         } catch (e: Exception) {
-            Log.d(ContentValues.TAG, e.message.toString())
+            Log.d(TAG, e.message.toString())
             _data.value = null
         }
     }
