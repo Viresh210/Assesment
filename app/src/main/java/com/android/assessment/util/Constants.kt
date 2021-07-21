@@ -9,10 +9,5 @@ object Constants {
     const val RADIUS = "1000"
     const val CITY = "Rotterdam"
     const val DATE = "20210718"
-    const val NO_DESCRIPTION = "No description available"
-    const val NO_CONTACT_INFORMATION = "No contactinformation available"
-    const val NO_ADDRESS = "No address available"
-    const val NO_RATING = "No rating available"
-    const val ERROR_MESSAGE_API = "The App could not retrieve the information requested"
 
 }

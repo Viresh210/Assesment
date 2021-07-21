@@ -1,7 +1,15 @@
 <resources>
+
     <string name="app_name">Assessment</string>
     <string name="venue_address">Address</string>
     <string name="venue_contact">Contactinformation</string>
     <string name="venue_rating">Rating</string>
     <string name="search">Search</string>
+    <string name="no_description">No description available</string>
+    <string name="no_contact_information">No contactinformation available</string>
+    <string name="no_address">No address availables</string>
+    <string name="no_rating">No rating available</string>
+    <string name="error_message_api">The App could not retrieve the information requested</string>
+    <string name="image_description">Rotterdam</string>
+
 </resources>

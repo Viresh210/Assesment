@@ -10,7 +10,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -41,13 +40,12 @@ class MainActivity : AppCompatActivity() {
         viewModel.data
             .observe(this, Observer {
 
-                it.let {
+                if (it != null) {
                     initAdapter()
                     rv_home.visibility = View.VISIBLE
-                    if (it != null) {
-                        adapter.setData(it.response.venues.sortedBy { myObject -> myObject.name })
-                        searchData = it.response.venues.sortedBy { myObject -> myObject.name }
-                    }
+                    adapter.setData(it.response.venues.sortedBy { myObject -> myObject.name })
+                    searchData = it.response.venues.sortedBy { myObject -> myObject.name }
+
                 }
             })
 
@@ -67,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 s: CharSequence, start: Int,
                 before: Int, count: Int
             ) {
-                filter(s.toString().toLowerCase());
+                filter(s.toString().toLowerCase())
             }
         })
     }

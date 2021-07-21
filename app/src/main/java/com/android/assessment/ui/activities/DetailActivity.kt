@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer
 import com.android.assessment.ui.viewmodels.DetailVenueViewModel
 import com.android.assessment.R
 import com.android.assessment.util.Constants
-import com.android.assessment.util.Constants.ERROR_MESSAGE_API
 
 class DetailActivity : AppCompatActivity() {
 
@@ -35,42 +34,30 @@ class DetailActivity : AppCompatActivity() {
             viewModel.data
                 .observe(this, Observer {
 
-                    it.let {
-                        if (it != null) {
-                            println(it.response.venue)
-                            tvVenueTitle.text = it.response.venue.name
-                            if (it.response.venue.description != null) {
-                                tvVenueDescription.text = it.response.venue.description
-                            } else {
-                                tvVenueDescription.text = Constants.NO_DESCRIPTION
-                            }
+                    if (it != null) {
+                        tvVenueTitle.text = it.response.venue.name
+                        tvVenueDescription.text =
+                            it.response.venue.description ?: getString(R.string.no_description)
+                        tvVenuePhoneNumber.text = it.response.venue.contact?.formattedPhone
+                            ?: getString(R.string.no_contact_information)
 
-                            if (it.response.venue.contact.formattedPhone != null) {
-                                tvVenuePhoneNumber.text = it.response.venue.contact.formattedPhone
-                            } else {
-                                tvVenuePhoneNumber.text = Constants.NO_CONTACT_INFORMATION
-                            }
+                        tvVenueAddress.text =
+                            it.response.venue.location?.address ?: getString(R.string.no_address)
+                        tvVenueRating.text =
+                            it.response.venue.rating ?: getString(R.string.no_rating)
 
-                            if (it.response.venue.location.address != null) {
-                                tvVenueAddress.text = it.response.venue.location.address
-                            } else {
-                                tvVenueAddress.text = Constants.NO_ADDRESS
-                            }
-
-                            if (it.response.venue.rating != null) {
-                                tvVenueRating.text = it.response.venue.rating
-                            } else {
-                                tvVenueRating.text = Constants.NO_RATING
-                            }
-
-                        }else{
-                            Toast.makeText(this, ERROR_MESSAGE_API, Toast.LENGTH_LONG).show()
-                            tvVenueDescription.text = Constants.NO_DESCRIPTION
-                            tvVenuePhoneNumber.text = Constants.NO_CONTACT_INFORMATION
-                            tvVenueAddress.text = Constants.NO_ADDRESS
-                            tvVenueRating.text = Constants.NO_RATING
-                        }
+                    } else {
+                        Toast.makeText(
+                            this,
+                            getString(R.string.error_message_api),
+                            Toast.LENGTH_LONG
+                        ).show()
+                        tvVenueDescription.text = getString(R.string.no_description)
+                        tvVenuePhoneNumber.text = getString(R.string.no_contact_information)
+                        tvVenueAddress.text = getString(R.string.no_address)
+                        tvVenueRating.text = getString(R.string.no_rating)
                     }
+
                 })
         }
     }
