@@ -26,18 +26,23 @@ class MainActivityTest {
         MainActivity::class.java
     )
     private val listItem = 2
-    private val venues = TestData.testVenuedata?.get(listItem)
+    private val venues = TestData.testVenueData?.get(listItem)
 
 
     @Test
     fun test_isListFragmentVisible_onAppLaunch() {
+        try {
+            Thread.sleep(4000)
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+        }
         onView(withId(R.id.rv_home)).check(matches(isDisplayed()))
     }
 
     @Test
-    fun test_selectListItem_isDetailFragmentVisible() {
+    fun test_selectListItem_isDetailActivityVisible() {
         try {
-            Thread.sleep(2000)
+            Thread.sleep(4000)
         } catch (e: InterruptedException) {
             e.printStackTrace()
         }
@@ -54,9 +59,9 @@ class MainActivityTest {
 
 
     @Test
-    fun test_backNavigation_toMovieListFragment() {
+    fun test_backNavigation_toVenueListFragment() {
         try {
-            Thread.sleep(2000)
+            Thread.sleep(4000)
         } catch (e: InterruptedException) {
             e.printStackTrace()
         }
